@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_secure_screen/flutter_secure_screen.dart';
+import 'package:flutter_screenshot_guard/flutter_screenshot_guard.dart';
 
 void main() {
-  runApp(const SecureScreenExampleApp());
+  runApp(const ScreenshotGuardExampleApp());
 }
 
-class SecureScreenExampleApp extends StatelessWidget {
-  const SecureScreenExampleApp({super.key});
+class ScreenshotGuardExampleApp extends StatelessWidget {
+  const ScreenshotGuardExampleApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Secure Screen Demo',
+      title: 'Flutter Screenshot Guard Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
         useMaterial3: true,
@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> _enableSecureMode() async {
-    await FlutterSecureScreen.enableSecureMode();
+    await FlutterScreenshotGuard.enableSecureMode();
     setState(() {
       _secureModeEnabled = true;
       _screenshotBlockingEnabled = true;
@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> _disableSecureMode() async {
-    await FlutterSecureScreen.disableSecureMode();
+    await FlutterScreenshotGuard.disableSecureMode();
     setState(() {
       _secureModeEnabled = false;
       _screenshotBlockingEnabled = false;
@@ -60,24 +60,24 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> _toggleScreenshotBlocking(bool value) async {
     if (value) {
-      await FlutterSecureScreen.enableScreenshotBlocking();
+      await FlutterScreenshotGuard.enableScreenshotBlocking();
     } else {
-      await FlutterSecureScreen.disableScreenshotBlocking();
+      await FlutterScreenshotGuard.disableScreenshotBlocking();
     }
     setState(() => _screenshotBlockingEnabled = value);
   }
 
   Future<void> _toggleBlurOnBackground(bool value) async {
     if (value) {
-      await FlutterSecureScreen.enableBlurOnBackground();
+      await FlutterScreenshotGuard.enableBlurOnBackground();
     } else {
-      await FlutterSecureScreen.disableBlurOnBackground();
+      await FlutterScreenshotGuard.disableBlurOnBackground();
     }
     setState(() => _blurOnBackgroundEnabled = value);
   }
 
   Future<void> _setBlurIntensity(double value) async {
-    await FlutterSecureScreen.setBlurIntensity(value);
+    await FlutterScreenshotGuard.setBlurIntensity(value);
     setState(() => _blurIntensity = value);
   }
 
@@ -85,7 +85,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter Secure Screen'),
+        title: const Text('Flutter Screenshot Guard'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: SingleChildScrollView(
@@ -125,7 +125,7 @@ class _HomePageState extends State<HomePage> {
             ),
             const SizedBox(height: 12),
             Text(
-              'This demo shows flutter_secure_screen features:\n'
+              'This demo shows flutter_screenshot_guard features:\n'
               '• Disable screenshots (Android) / blur when recording (iOS)\n'
               '• Disable screen recording\n'
               '• Blur app when in background or app switcher',

@@ -2,23 +2,16 @@ import Flutter
 import UIKit
 import XCTest
 
-
-@testable import flutter_secure_screen
-
-// This demonstrates a simple unit test of the Swift portion of this plugin's implementation.
-//
-// See https://developer.apple.com/documentation/xctest for more information about using XCTest.
+@testable import flutter_screenshot_guard
 
 class RunnerTests: XCTestCase {
 
-  func testGetPlatformVersion() {
-    let plugin = FlutterSecureScreenPlugin()
-
-    let call = FlutterMethodCall(methodName: "getPlatformVersion", arguments: [])
-
+  func testEnableScreenshotBlocking() {
+    let plugin = FlutterScreenshotGuardPlugin()
+    let call = FlutterMethodCall(methodName: "enableScreenshotBlocking", arguments: nil)
     let resultExpectation = expectation(description: "result block must be called.")
     plugin.handle(call) { result in
-      XCTAssertEqual(result as! String, "iOS " + UIDevice.current.systemVersion)
+      XCTAssertNil(result)
       resultExpectation.fulfill()
     }
     waitForExpectations(timeout: 1)

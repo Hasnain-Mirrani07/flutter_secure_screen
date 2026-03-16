@@ -1,8 +1,8 @@
-# flutter_secure_screen
+# flutter_screenshot_guard
 
-[![pub package](https://img.shields.io/pub/v/flutter_secure_screen.svg)](https://pub.dev/packages/flutter_secure_screen)
+[![pub package](https://img.shields.io/pub/v/flutter_screenshot_guard.svg)](https://pub.dev/packages/flutter_screenshot_guard)
 
-**Secure screenshot and screen recording protection for Flutter apps.**  
+**Screenshot and screen recording guard for Flutter apps.**  
 Essential for **banking**, **wallet**, **password manager**, and other fintech apps that must prevent screenshots, screen recording, and visible content in the app switcher.
 
 ## Features
@@ -22,7 +22,7 @@ Add to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  flutter_secure_screen: ^1.0.0
+  flutter_screenshot_guard: ^1.0.0
 ```
 
 Then run:
@@ -36,11 +36,11 @@ flutter pub get
 ### Enable all protections (recommended for fintech)
 
 ```dart
-import 'package:flutter_secure_screen/flutter_secure_screen.dart';
+import 'package:flutter_screenshot_guard/flutter_screenshot_guard.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await FlutterSecureScreen.enableSecureMode();
+  await FlutterScreenshotGuard.enableSecureMode();
   runApp(MyApp());
 }
 ```
@@ -49,12 +49,12 @@ void main() async {
 
 ```dart
 // Block screenshots and screen recording (Android: FLAG_SECURE; iOS: blur when recording)
-await FlutterSecureScreen.enableScreenshotBlocking();
-await FlutterSecureScreen.disableScreenshotBlocking();
+await FlutterScreenshotGuard.enableScreenshotBlocking();
+await FlutterScreenshotGuard.disableScreenshotBlocking();
 
 // Blur app when in background (app switcher / recents)
-await FlutterSecureScreen.enableBlurOnBackground();
-await FlutterSecureScreen.disableBlurOnBackground();
+await FlutterScreenshotGuard.enableBlurOnBackground();
+await FlutterScreenshotGuard.disableBlurOnBackground();
 ```
 
 ### Optional: blur intensity
@@ -62,7 +62,7 @@ await FlutterSecureScreen.disableBlurOnBackground();
 When using blur on background, you can set intensity (0.0–1.0, default 0.5):
 
 ```dart
-await FlutterSecureScreen.setBlurIntensity(0.7);
+await FlutterScreenshotGuard.setBlurIntensity(0.7);
 ```
 
 ## Use cases

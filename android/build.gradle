@@ -1,4 +1,4 @@
-group = "com.example.flutter_secure_screen"
+group = "com.example.flutter_screenshot_guard"
 version = "1.0-SNAPSHOT"
 
 buildscript {
@@ -25,7 +25,7 @@ apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
 
 android {
-    namespace = "com.example.flutter_secure_screen"
+    namespace = "com.example.flutter_screenshot_guard"
 
     compileSdk = 36
 

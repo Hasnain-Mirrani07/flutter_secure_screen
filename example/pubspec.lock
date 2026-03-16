@@ -83,7 +83,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.0.0"
-  flutter_secure_screen:
+  flutter_screenshot_guard:
     dependency: "direct main"
     description:
       path: ".."

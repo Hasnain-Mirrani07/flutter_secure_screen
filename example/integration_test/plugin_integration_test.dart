@@ -3,24 +3,24 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
-import 'package:flutter_secure_screen/flutter_secure_screen.dart';
+import 'package:flutter_screenshot_guard/flutter_screenshot_guard.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   testWidgets('enableSecureMode and disableSecureMode complete', (tester) async {
-    await FlutterSecureScreen.enableSecureMode();
-    await FlutterSecureScreen.disableSecureMode();
+    await FlutterScreenshotGuard.enableSecureMode();
+    await FlutterScreenshotGuard.disableSecureMode();
   });
 
   testWidgets('enableScreenshotBlocking completes', (tester) async {
-    await FlutterSecureScreen.enableScreenshotBlocking();
-    await FlutterSecureScreen.disableScreenshotBlocking();
+    await FlutterScreenshotGuard.enableScreenshotBlocking();
+    await FlutterScreenshotGuard.disableScreenshotBlocking();
   });
 
   testWidgets('enableBlurOnBackground and setBlurIntensity complete', (tester) async {
-    await FlutterSecureScreen.enableBlurOnBackground();
-    await FlutterSecureScreen.setBlurIntensity(0.6);
-    await FlutterSecureScreen.disableBlurOnBackground();
+    await FlutterScreenshotGuard.enableBlurOnBackground();
+    await FlutterScreenshotGuard.setBlurIntensity(0.6);
+    await FlutterScreenshotGuard.disableBlurOnBackground();
   });
 }
