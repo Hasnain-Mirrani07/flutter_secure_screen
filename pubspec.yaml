@@ -1,0 +1,36 @@
+name: flutter_secure_screen
+description: Secure screen protection for fintech apps. Disable screenshots, disable screen recording, and blur app when in background. Essential for banking, wallet, and password apps.
+version: 1.0.0
+homepage: https://github.com/Hasnain-Mirrani07/flutter_secure_screen
+repository: https://github.com/Hasnain-Mirrani07/flutter_secure_screen
+issue_tracker: https://github.com/Hasnain-Mirrani07/flutter_secure_screen/issues
+documentation: https://github.com/Hasnain-Mirrani07/flutter_secure_screen#readme
+topics:
+  - security
+  - fintech
+  - screenshot
+  - screen-recording
+  - banking
+  - wallet
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.3.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.example.flutter_secure_screen
+        pluginClass: FlutterSecureScreenPlugin
+      ios:
+        pluginClass: FlutterSecureScreenPlugin
